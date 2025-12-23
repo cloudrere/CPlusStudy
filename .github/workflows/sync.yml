@@ -15,7 +15,7 @@ jobs:
         uses: Yikun/gitee-mirror-action@master
         with:
           # 起源端：Gitee 仓库地址
-          src: gitee/Deep-w
+          src: gitee/deep__wang
           # 目标端：GitHub 仓库地址
           dst: github/cloudrere
           # 填写你在 Secrets 中设置的名字
