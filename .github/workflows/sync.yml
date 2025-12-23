@@ -14,15 +14,16 @@ jobs:
       - name: Mirror the Gitee repo to GitHub
         uses: Yikun/gitee-mirror-action@master
         with:
-          # 起源端：Gitee 仓库地址
+         # 起源端：Gitee
           src: gitee/deep__wang
-          # 目标端：GitHub 仓库地址
+          # 目标端：GitHub
           dst: github/cloudrere
-          # 填写你在 Secrets 中设置的名字
+          # 钥匙和令牌
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
+          # 仓库列表（注意：不要加 .git 后缀）
           static_list: "CPlusStudy"
           force_update: true
+          # 显式指定使用 SSH 协议
           clone_style: "ssh"
-          ssh_url: "git@gitcode.com:deep__wang/CPlusStudy.git"
           debug: true
