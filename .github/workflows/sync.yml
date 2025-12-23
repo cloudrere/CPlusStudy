@@ -21,7 +21,8 @@ jobs:
           # 填写你在 Secrets 中设置的名字
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
-          static_list: "git@gitcode.com:deep__wang/CPlusStudy.git"
+          static_list: "CPlusStudy.git"
           force_update: true
           clone_style: "ssh"
+          ssh_url: "git@gitee.com:deep__wang/CPlusStudy.git"
           debug: true
