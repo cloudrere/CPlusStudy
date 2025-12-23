@@ -1,0 +1,26 @@
+name: Sync to GitHub
+
+# 触发条件
+on:
+  push:                # 当你本地推送到这个 GitHub 仓库时触发
+  schedule:
+    - cron: '0 */2 * * *' # 每 2 小时自动检查一次 Gitee 并同步
+  workflow_dispatch:    # 允许你在 GitHub 页面上手动点击按钮触发
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror the Gitee repo to GitHub
+        uses: Yikun/gitee-mirror-action@master
+        with:
+          # 起源端：Gitee 仓库地址
+          src: gitee/Deep-w
+          # 目标端：GitHub 仓库地址
+          dst: github/cloudrere
+          # 填写你在 Secrets 中设置的名字
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "CPlusStudy"
+          force_update: true
+          debug: true
