@@ -24,5 +24,5 @@ jobs:
           static_list: "CPlusStudy.git"
           force_update: true
           clone_style: "ssh"
-          ssh_url: "git@gitee.com:deep__wang/CPlusStudy.git"
+          ssh_url: "git@gitcode.com:deep__wang/CPlusStudy.git"
           debug: true
